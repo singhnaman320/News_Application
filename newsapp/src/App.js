@@ -2,4 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 
 // Modifying App.js for class based component
-export default App;
+// use "rcc" to getclass based component
+
+
+// export default App;
