@@ -19,3 +19,5 @@ export default class App extends Component {
 }
 
 // export default App;
+
+// we will use News API : https://newsapi.org/docs/get-started for this application
