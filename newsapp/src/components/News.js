@@ -16,7 +16,9 @@ export class News extends Component {
           <div className="col-md-4"> 
             <NewsItem title="MyTitle" description="myDescription"/> {/*way to pass value of title and description*/}
           </div>
-         
+          <div className="col-md-4"> 
+            <NewsItem title="MyTitle" description="myDescription"/> {/*way to pass value of title and description*/}
+          </div>
         </div>
         <NewsItem/>
         <NewsItem/>
