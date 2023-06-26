@@ -64,7 +64,10 @@ export class News extends Component {
     super();
     console.log("Hello I an constructor from News Component")
 
-    this.state= {};
+    this.state= { //defining the state
+      articles: this.articles,
+      loading: false
+    };
   }
 
   render() {
