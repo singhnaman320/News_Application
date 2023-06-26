@@ -75,6 +75,8 @@ export class News extends Component {
       <div className='container my-3'>
         <h2>TimesNews - Top Headlines</h2>
         {/* Provide all three in same row */}
+
+        {this.state.articles.map((element) => {console.log(element)})} {/* Will show all the elements related to above states in console*/}
         <div className="row">
            {/* Provide one news card in sinle column */}
            {/* md-3 means -> In medium devices it will take 3 columns of container (total -12 grids)*/}
