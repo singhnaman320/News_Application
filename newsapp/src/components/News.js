@@ -86,9 +86,10 @@ export class News extends Component {
               {/* We have to provide the unique key(here url) as well for each child card otherwise it will see error in console */}
               return <div className="col-md-3" key={element.url}> 
              
-              <NewsItem title={element.title} description={element.description} 
+              {/* here slice is used to limit the characters so that our cards become uniform */}
+              <NewsItem title={element.title.slice(0, 45)} description={element.description.slice(0, 88)} 
               imageUrl={element.urlToImage}
-              newsUrl="ToDo"/> {/*way to pass value of title and description*/}
+              newsUrl={element.url}/> {/*way to pass value of title and description*/}
 
               </div>
 
