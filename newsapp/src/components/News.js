@@ -10,6 +10,7 @@ export class News extends Component {
         {/* Provide all three in same row */}
         <div className="row">
            {/* Provide one news card in sinle column */}
+           {/* md-4 means -> In medium devices it will take 4 columns */}
           <div className="col-md-4"> 
             <NewsItem title="MyTitle" description="myDescription"/> {/*way to pass value of title and description*/}
           </div>
