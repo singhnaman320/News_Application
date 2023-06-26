@@ -7,7 +7,7 @@ export class News extends Component {
     return (
       <div>
         This is a News component
-        <NewsItem/>
+        <NewsItem title="MyTitle" description="myDescription"/> {/*way to pass value of title and description*/}
       </div>
     )
   }
