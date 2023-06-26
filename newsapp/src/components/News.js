@@ -83,7 +83,7 @@ export class News extends Component {
 
            {this.state.articles.map((element) => {
 
-             
+              {/* We have to provide the unique key(here url) as well for each child card otherwise it will see error in console */}
               return <div className="col-md-3" key={element.url}> 
              
               <NewsItem title={element.title} description={element.description} 
