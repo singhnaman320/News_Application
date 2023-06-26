@@ -76,17 +76,24 @@ export class News extends Component {
         <h2>TimesNews - Top Headlines</h2>
         {/* Provide all three in same row */}
 
-        {this.state.articles.map((element) => {console.log(element)})} {/* Will show all the elements related to above states in console*/}
+        {/*{this.state.articles.map((element) => {console.log(element)})}  Will show all the elements related to above states in console*/}
         <div className="row">
            {/* Provide one news card in sinle column */}
            {/* md-3 means -> In medium devices it will take 3 columns of container (total -12 grids)*/}
-          <div className="col-md-3"> 
 
-            <NewsItem title="MyTitle" description="myDescription" 
-            imageUrl="https://ichef.bbci.co.uk/news/1024/cpsprodpb/13037/production/_130197877_andersonfirstpitch2.jpg" 
-            newsUrl="ToDo"/> {/*way to pass value of title and description*/}
+           {this.state.articles.map((element) => {
 
-          </div>
+             
+              return <div className="col-md-3" key={element.url}> 
+             
+              <NewsItem title={element.title} description={element.description} 
+              imageUrl={element.urlToImage}
+              newsUrl="ToDo"/> {/*way to pass value of title and description*/}
+
+              </div>
+
+           })}
+
         </div>
       </div>
     )
