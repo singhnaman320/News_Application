@@ -85,21 +85,6 @@ export class News extends Component {
             newsUrl="ToDo"/> {/*way to pass value of title and description*/}
 
           </div>
-          <div className="col-md-3"> 
-
-            <NewsItem title="MyTitle" description="myDescription"/> {/*way to pass value of title and description*/}
-
-          </div>
-          <div className="col-md-3"> 
-
-            <NewsItem title="MyTitle" description="myDescription"/> {/*way to pass value of title and description*/}
-
-          </div>
-          <div className="col-md-3"> 
-
-            <NewsItem title="MyTitle" description="myDescription"/> {/*way to pass value of title and description*/}
-            
-          </div>
         </div>
       </div>
     )
