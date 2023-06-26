@@ -79,7 +79,7 @@ export class News extends Component {
            {/* Provide one news card in sinle column */}
            {/* md-3 means -> In medium devices it will take 3 columns of container (total -12 grids)*/}
           <div className="col-md-3"> 
-            <NewsItem title="MyTitle" description="myDescription" imageUrl="https://ichef.bbci.co.uk/news/1024/cpsprodpb/13037/production/_130197877_andersonfirstpitch2.jpg"/> {/*way to pass value of title and description*/}
+            <NewsItem title="MyTitle" description="myDescription" imageUrl="https://ichef.bbci.co.uk/news/1024/cpsprodpb/13037/production/_130197877_andersonfirstpitch2.jpg" newsUrl=""/> {/*way to pass value of title and description*/}
           </div>
           <div className="col-md-3"> 
             <NewsItem title="MyTitle" description="myDescription"/> {/*way to pass value of title and description*/}
