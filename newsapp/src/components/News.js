@@ -71,8 +71,10 @@ export class News extends Component {
   }
 
   // This method will run after render and Called immediately after a component is mounted. Setting state here will trigger re-rendering.
-  componentDidMount(){
+  async componentDidMount(){
 
+    let url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=e0ba208f951546f68892a6f21793f278";
+    
   }
 
   render() {
