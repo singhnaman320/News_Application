@@ -23,7 +23,7 @@ export class News extends Component {
     let data = await fetch(url);
     let parsedData = await data.json();
     console.log(parsedData);
-    this.setState({articles : parsedData.articles});
+    this.setState({articles : parsedData.articles, totalResults: parsedData.totalResults}); // totalResults: Name according to given API
   }
 
   handlePreviousClick = async() => {
