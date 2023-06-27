@@ -96,4 +96,5 @@ export class News extends Component {
 export default News
 
 // We have to take care that when we clicking on next, we are not going on blank page to do so we have to calculate 
-// numbers of pages by using total Items and pageSize(items on simgle page)
+// numbers of pages by using total Items and pageSize(items on simgle page)--> Math.ceil(Totalitems/pageZize)
+// Math.ceil(5.8) = 5;
