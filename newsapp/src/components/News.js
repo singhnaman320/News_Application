@@ -19,7 +19,7 @@ export class News extends Component {
   // This method will run after render and Called immediately after a component is mounted. Setting state here will trigger re-rendering.
   async componentDidMount(){
 
-    let url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=e0ba208f951546f68892a6f21793f278";
+    let url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=e0ba208f951546f68892a6f21793f278&page=1&pageSize=20";
     let data = await fetch(url);
     let parsedData = await data.json();
     console.log(parsedData);
@@ -30,14 +30,14 @@ export class News extends Component {
 
     console.log("Previous");
 
-    let url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=e0ba208f951546f68892a6f21793f278";
+    let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=e0ba208f951546f68892a6f21793f278&page=${this.state.page - 1}&pageSize=20`;
     let data = await fetch(url);
     let parsedData = await data.json();
     console.log(parsedData);
-    this.setState({articles : parsedData.articles});
-
+  
     this.setState({
-      page: this.state.page + 1,
+      page: this.state.page - 1,
+      articles : parsedData.articles
     });
 
   }
@@ -46,14 +46,14 @@ export class News extends Component {
 
     console.log("Next");
 
-    let url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=e0ba208f951546f68892a6f21793f278";
+    let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=e0ba208f951546f68892a6f21793f278&page=${this.state.page + 1}&pageSize=20`;
     let data = await fetch(url);
     let parsedData = await data.json();
     console.log(parsedData);
-    this.setState({articles : parsedData.articles});
-
+  
     this.setState({
       page: this.state.page + 1,
+      articles : parsedData.articles
     });
 
   }
@@ -94,3 +94,6 @@ export class News extends Component {
 }
 
 export default News
+
+// We have to take care that when we clicking on next, we are not going on blank page to do so we have to calculate 
+// numbers of pages by using total Items and pageSize(items on simgle page)
