@@ -96,7 +96,7 @@ export class News extends Component {
               return <div className="col-md-3" key={element.url}> 
              
               {/* here slice is used to limit the characters so that our cards become uniform */}
-              <NewsItem title={element.title ? element.title.slice(0, 45) : ""} description={element.description.slice(0, 88)} 
+              <NewsItem title={element.title ? element.title.slice(0, 45) : ""} description={element.description ? element.description.slice(0, 88) : ""} 
               imageUrl={element.urlToImage}
               newsUrl={element.url}/> {/*way to pass value of title and description*/}
 
