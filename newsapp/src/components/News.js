@@ -70,6 +70,11 @@ export class News extends Component {
     };
   }
 
+  // This method will run after render and Called immediately after a component is mounted. Setting state here will trigger re-rendering.
+  componentDidMount(){
+
+  }
+
   render() {
     return (
       <div className='container my-3'>
