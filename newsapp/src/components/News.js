@@ -26,9 +26,20 @@ export class News extends Component {
     this.setState({articles : parsedData.articles});
   }
 
-  handlePreviousClick = () => {
+  handlePreviousClick = async() => {
 
     console.log("Previous");
+
+    let url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=e0ba208f951546f68892a6f21793f278";
+    let data = await fetch(url);
+    let parsedData = await data.json();
+    console.log(parsedData);
+    this.setState({articles : parsedData.articles});
+
+    this.setState({
+      page: this.state.page + 1,
+    });
+
   }
 
   handleNextClick = async() => {
@@ -44,7 +55,7 @@ export class News extends Component {
     this.setState({
       page: this.state.page + 1,
     });
-    
+
   }
 
   render() {
