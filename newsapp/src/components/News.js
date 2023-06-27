@@ -11,7 +11,8 @@ export class News extends Component {
 
     this.state= { //defining the state
       articles: [],
-      loading: false
+      loading: false,
+      page: 1  // default: All data on page - 1
     };
   }
 
