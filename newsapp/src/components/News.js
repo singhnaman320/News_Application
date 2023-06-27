@@ -67,7 +67,7 @@ export class News extends Component {
   render() {
     return (
       <div className='container my-3'>
-        <h2>TimesNews - Top Headlines</h2>
+        <h1 className='text-center'>TimesNews - Top Headlines</h1>
         {/* Provide all three in same row */}
 
         {/*{this.state.articles.map((element) => {console.log(element)})}  Will show all the elements related to above states in console*/}
@@ -92,7 +92,7 @@ export class News extends Component {
         <div className="container d-flex justify-content-between">
         {/* &larr; Previous arrow, &rarr; Newxt arrow*/}
         <button disabled={this.state.page <=1} type="button" className="btn btn-dark mx-2" onClick={this.handlePreviousClick}>&larr; previous</button>
-        <button rel ="noreferrer" type="button" className="btn btn-dark" onClick={this.handleNextClick}>Next &rarr; </button>
+        <button disabled={this.state.page + 1 > Math.ceil(this.state.totalResults/20)} rel ="noreferrer" type="button" className="btn btn-dark" onClick={this.handleNextClick}>Next &rarr; </button>
         </div>
       </div>
     )

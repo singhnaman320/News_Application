@@ -10,7 +10,7 @@ export class Navbar extends Component {  // Do not change this class to classNam
   render() {
     return (
       <div>
-        <nav className="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+        <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
             <div className="container-fluid">
                 <a className="navbar-brand" href="/">TimesNews</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
