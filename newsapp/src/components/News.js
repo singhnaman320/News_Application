@@ -46,16 +46,23 @@ export class News extends Component {
 
     console.log("Next");
 
-    let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=e0ba208f951546f68892a6f21793f278&page=${this.state.page + 1}&pageSize=20`;
-    let data = await fetch(url);
-    let parsedData = await data.json();
-    console.log(parsedData);
-  
-    this.setState({
-      page: this.state.page + 1,
-      articles : parsedData.articles
-    });
+    if(this.state.page + 1 > Math.ceil(this.state.totalResults/20)){
+      
+     
+    }else{
 
+      
+      let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=e0ba208f951546f68892a6f21793f278&page=${this.state.page + 1}&pageSize=20`;
+      let data = await fetch(url);
+      let parsedData = await data.json();
+      console.log(parsedData);
+    
+      this.setState({
+        page: this.state.page + 1,
+        articles : parsedData.articles
+      });
+
+    }
   }
 
   render() {
