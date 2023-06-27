@@ -26,6 +26,27 @@ export class News extends Component {
     this.setState({articles : parsedData.articles});
   }
 
+  handlePreviousClick = () => {
+
+    console.log("Previous");
+  }
+
+  handleNextClick = async() => {
+
+    console.log("Next");
+
+    let url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=e0ba208f951546f68892a6f21793f278";
+    let data = await fetch(url);
+    let parsedData = await data.json();
+    console.log(parsedData);
+    this.setState({articles : parsedData.articles});
+
+    this.setState({
+      page: this.state.page + 1,
+    });
+    
+  }
+
   render() {
     return (
       <div className='container my-3'>
@@ -53,8 +74,8 @@ export class News extends Component {
         </div>
         <div className="container d-flex justify-content-between">
         {/* &larr; Previous arrow, &rarr; Newxt arrow*/}
-        <button type="button" class="btn btn-dark mx-2" onClick={handlePreviousClick}>&larr; previous</button>
-        <button rel ="noreferrer" type="button" class="btn btn-dark" onClick={handleNextClick}>Next &rarr; </button>
+        <button disabled={this.state.page <=1} type="button" className="btn btn-dark mx-2" onClick={this.handlePreviousClick}>&larr; previous</button>
+        <button rel ="noreferrer" type="button" className="btn btn-dark" onClick={this.handleNextClick}>Next &rarr; </button>
         </div>
       </div>
     )
