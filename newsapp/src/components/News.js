@@ -53,8 +53,8 @@ export class News extends Component {
         </div>
         <div className="container d-flex justify-content-between">
         {/* &larr; Previous arrow, &rarr; Newxt arrow*/}
-        <button type="button" className="btn btn-dark mx-2">&larr; previous</button>
-        <button rel ="noreferrer" type="button" className="btn btn-dark ">&rarr; Next</button>
+        <button type="button" class="btn btn-dark mx-2" onClick={handlePreviousClick}>&larr; previous</button>
+        <button rel ="noreferrer" type="button" class="btn btn-dark" onClick={handleNextClick}>Next &rarr; </button>
         </div>
       </div>
     )
