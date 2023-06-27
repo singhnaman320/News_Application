@@ -19,7 +19,7 @@ export class News extends Component {
   // This method will run after render and Called immediately after a component is mounted. Setting state here will trigger re-rendering.
   async componentDidMount(){
 
-    let url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=e0ba208f951546f68892a6f21793f278&page=1&pageSize=20";
+    let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=e0ba208f951546f68892a6f21793f278&page=1&pageSize=${this.props.pageSize}`;
     let data = await fetch(url);
     let parsedData = await data.json();
     console.log(parsedData);
@@ -30,7 +30,7 @@ export class News extends Component {
 
     console.log("Previous");
 
-    let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=e0ba208f951546f68892a6f21793f278&page=${this.state.page - 1}&pageSize=20`;
+    let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=e0ba208f951546f68892a6f21793f278&page=${this.state.page - 1}&pageSize=${this.props.pageSize}`;
     let data = await fetch(url);
     let parsedData = await data.json();
     console.log(parsedData);
@@ -46,12 +46,12 @@ export class News extends Component {
 
     console.log("Next");
 
-    if(this.state.page + 1 > Math.ceil(this.state.totalResults/20)){
+    if(this.state.page + 1 > Math.ceil(this.state.totalResults/this.props.pageSize)){
       
      
     }else{
 
-      let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=e0ba208f951546f68892a6f21793f278&page=${this.state.page + 1}&pageSize=20`;
+      let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=e0ba208f951546f68892a6f21793f278&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;
       let data = await fetch(url);
       let parsedData = await data.json();
       console.log(parsedData);
@@ -92,7 +92,7 @@ export class News extends Component {
         <div className="container d-flex justify-content-between">
         {/* &larr; Previous arrow, &rarr; Newxt arrow*/}
         <button disabled={this.state.page <=1} type="button" className="btn btn-dark mx-2" onClick={this.handlePreviousClick}>&larr; previous</button>
-        <button disabled={this.state.page + 1 > Math.ceil(this.state.totalResults/20)} rel ="noreferrer" type="button" className="btn btn-dark" onClick={this.handleNextClick}>Next &rarr; </button>
+        <button disabled={this.state.page + 1 > Math.ceil(this.state.totalResults/this.props.pageSize)} rel ="noreferrer" type="button" className="btn btn-dark" onClick={this.handleNextClick}>Next &rarr; </button>
         </div>
       </div>
     )
