@@ -5,20 +5,6 @@ import NewsItem from './NewsItem'
 export class News extends Component {
 
   articles = [
-            
-                {
-                    "source": {
-                        "id": "talksport",
-                        "name": "TalkSport"
-                    },
-                    "author": "Joe Moore",
-                    "title": "Jimmy Anderson outclasses Conor McGregor as England cricket star delivers ceremonial first pitch at MLB...",
-                    "description": "Jimmy Anderson certainly did a lot better than Conor McGregor as the English cricket star delivered a perfect first pitch to open the 2023 London Series. The UFC icon may have once switched the oct…",
-                    "url": "https://talksport.com/sport/us-sports/1477331/jimmy-anderson-conor-mcgregor-first-pitch-london-series-baseball/",
-                    "urlToImage": "https://talksport.com/wp-content/uploads/sites/5/2023/06/OQ-TALKSPORT-ANDERSON-MCGREGOR-BBALL.jpg?strip=all&quality=100&w=1500&h=1000&crop=1",
-                    "publishedAt": "2023-06-24T18:09:10Z",
-                    "content": "Jimmy Anderson certainly did a lot better than Conor McGregor as the English cricket star delivered a perfect first pitch to open the 2023 London Series.\r\nThe UFC icon may have once switched the octa… [+3196 chars]"
-                },
                 {
                     "source": {
                         "id": "espn-cric-info",
