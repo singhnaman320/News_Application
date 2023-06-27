@@ -5,19 +5,7 @@ import NewsItem from './NewsItem'
 export class News extends Component {
 
   articles = [
-                {
-                    "source": {
-                        "id": "bbc-sport",
-                        "name": "BBC Sport"
-                    },
-                    "author": null,
-                    "title": "'I was nervous!' Anderson throws first pitch at MLB London Series",
-                    "description": "England cricketer James Anderson throws the ceremonial first pitch of the MLB London Series as St Louis Cardinals play Chicago Cubs at London Stadium.",
-                    "url": "http://www.bbc.co.uk/sport/av/baseball/66010494",
-                    "urlToImage": "https://ichef.bbci.co.uk/news/1024/cpsprodpb/13037/production/_130197877_andersonfirstpitch2.jpg",
-                    "publishedAt": "2023-06-25T08:52:20.9172234Z",
-                    "content": "Watch as England cricketer James Anderson throws the ceremonial first pitch of the MLB London Series as the St Louis Cardinals play the Chicago Cubs at London Stadium.\r\nWatch the MLB London Series ga… [+151 chars]"
-                },
+            
                 {
                     "source": {
                         "id": "talksport",
