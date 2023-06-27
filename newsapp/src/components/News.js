@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import NewsItem from './NewsItem'
+import Spinner from './Spinner';
 
 // Use "rce --> enter" to get simple class structure
 export class News extends Component {
@@ -68,8 +69,8 @@ export class News extends Component {
     return (
       <div className='container my-3'>
         <h1 className='text-center'>TimesNews - Top Headlines</h1>
+        <Spinner/>
         {/* Provide all three in same row */}
-
         {/*{this.state.articles.map((element) => {console.log(element)})}  Will show all the elements related to above states in console*/}
         <div className="row">
            {/* Provide one news card in sinle column */}
