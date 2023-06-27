@@ -10,7 +10,7 @@ export class News extends Component {
     console.log("Hello I an constructor from News Component")
 
     this.state= { //defining the state
-      articles: this.articles,
+      articles: [],
       loading: false
     };
   }
