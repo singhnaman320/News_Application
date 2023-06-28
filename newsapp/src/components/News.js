@@ -1,9 +1,23 @@
 import React, { Component } from 'react'
 import NewsItem from './NewsItem'
 import Spinner from './Spinner';
+import PropTypes from 'prop-types'
+
 
 // Use "rce --> enter" to get simple class structure
 export class News extends Component {
+
+  static defaultProps = {
+
+    country : "in",
+    pageSize : 8
+  }
+
+  static propTypes = {
+
+    country : PropTypes.string, // use "pts"
+    pageSize : PropTypes.number, // use "ptn"
+  }
 
   constructor(){
 
