@@ -51,16 +51,18 @@ export class News extends Component {
   // This method will run after render and Called immediately after a component is mounted. Setting state here will trigger re-rendering.
   async componentDidMount(){
 
-    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=e0ba208f951546f68892a6f21793f278&page=1&pageSize=${this.props.pageSize}`;
-    this.setState({loading : true})
-    let data = await fetch(url);
-    let parsedData = await data.json();
-    console.log(parsedData);
-    this.setState({
-      articles : parsedData.articles,
-      totalResults: parsedData.totalResults,
-      loading : false
-    }); // totalResults: Name according to given API
+    // let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=e0ba208f951546f68892a6f21793f278&page=1&pageSize=${this.props.pageSize}`;
+    // this.setState({loading : true})
+    // let data = await fetch(url);
+    // let parsedData = await data.json();
+    // console.log(parsedData);
+    // this.setState({
+    //   articles : parsedData.articles,
+    //   totalResults: parsedData.totalResults,
+    //   loading : false
+    // }); // totalResults: Name according to given API   OR
+
+    this.updateNews();
   }
 
   handlePreviousClick = async() => {
