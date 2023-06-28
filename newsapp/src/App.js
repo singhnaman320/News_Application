@@ -20,28 +20,28 @@ export default class App extends Component {
           <Navbar/>
           <Switch>
             
-            <Route path='/'> {/* will reach to home */}
+            <Route exact path='/'> {/* will reach to home */}
               <News pageSize={8} country="in" category="general"/> {/* All categories you can see from News API */}
             </Route>
-            <Route path='/business'>
+            <Route exact path='/business'>
               <News pageSize={8} country="in" category="business"/>
             </Route>
-            <Route path='/entertainment'>
+            <Route exact path='/entertainment'>
               <News pageSize={8} country="in" category="entertainment"/>
             </Route>
-            <Route path='/general'>
+            <Route exact path='/general'>
               <News pageSize={8} country="in" category="general"/>
             </Route>
-            <Route path='/health'>
+            <Route exact path='/health'>
               <News pageSize={8} country="in" category="health"/>
             </Route>
-            <Route path='/science'>
+            <Route exact path='/science'>
               <News pageSize={8} country="in" category="science"/>
             </Route>
-            <Route path='/sports'>
+            <Route exact path='/sports'>
               <News pageSize={8} country="in" category="sports"/>
             </Route>
-            <Route path='/technology'>
+            <Route exact path='/technology'>
               <News pageSize={8} country="in" category="technology"/>
             </Route>
             
