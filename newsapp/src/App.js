@@ -19,7 +19,11 @@ export default class App extends Component {
       <div>
         <Router>
           <Navbar/>
-          <News pageSize={8} country="in" category="general"/> {/* All categories you can see from News API */}
+          <Switch>
+            <Route path='/users'>
+              <News pageSize={8} country="in" category="general"/> {/* All categories you can see from News API */}
+            </Route>
+          </Switch>
         </Router>
       </div>
     )
