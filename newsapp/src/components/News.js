@@ -33,7 +33,7 @@ export class News extends Component {
     };
   }
 
-  async updateNews(pageNo){
+  async updateNews(){
 
     const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=e0ba208f951546f68892a6f21793f278&page=${this.state.page}&pageSize=${this.props.pageSize}`;
     this.setState({loading : true})
@@ -77,9 +77,10 @@ export class News extends Component {
     //   page: this.state.page - 1,
     //   articles : parsedData.articles,
     //   loading : false
-    // });
+    // }); OR
     
-    this.setState({page: this.state.page - 1})
+    this.setState({page: this.state.page - 1});
+    this.updateNews();
   }
 
   handleNextClick = async() => {
@@ -99,9 +100,10 @@ export class News extends Component {
     //     loading : false
     //   });
 
-    // }
+    // }  OR
 
-    this.setState({page: this.state.page + 1})
+    this.setState({page: this.state.page + 1});
+    this.updateNews();
   }
 
   render() {
