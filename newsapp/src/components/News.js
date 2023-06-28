@@ -78,7 +78,8 @@ export class News extends Component {
     //   articles : parsedData.articles,
     //   loading : false
     // });
-
+    
+    this.setState({page: this.state.page - 1})
   }
 
   handleNextClick = async() => {
@@ -99,7 +100,7 @@ export class News extends Component {
     //   });
 
     // }
-    
+
   }
 
   render() {
