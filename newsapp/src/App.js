@@ -18,7 +18,7 @@ export default class App extends Component {
     return (
       <div>
         <Navbar/>
-        <News pageSize={8} country="in" category="sports"/> {/* All categories you can see from News API */}
+        <News pageSize={8} country="in" category="general"/> {/* All categories you can see from News API */}
       </div>
     )
   }
