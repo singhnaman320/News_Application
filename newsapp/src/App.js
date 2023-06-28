@@ -19,7 +19,7 @@ export default class App extends Component {
         <Router>
           <Navbar/>
           <Switch>
-            
+            {/* Key here is used for mounting the given category of news overriding the present one */}
             <Route exact path='/'> {/* will reach to home */}
               <News key='general' pageSize={8} country="in" category="general"/> {/* All categories you can see from News API */}
             </Route>
