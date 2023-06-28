@@ -20,7 +20,7 @@ export class News extends Component {
   // This method will run after render and Called immediately after a component is mounted. Setting state here will trigger re-rendering.
   async componentDidMount(){
 
-    let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=e0ba208f951546f68892a6f21793f278&page=1&pageSize=${this.props.pageSize}`;
+    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&apiKey=e0ba208f951546f68892a6f21793f278&page=1&pageSize=${this.props.pageSize}`;
     this.setState({loading : true})
     let data = await fetch(url);
     let parsedData = await data.json();
@@ -36,7 +36,7 @@ export class News extends Component {
 
     console.log("Previous");
 
-    let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=e0ba208f951546f68892a6f21793f278&page=${this.state.page - 1}&pageSize=${this.props.pageSize}`;
+    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&apiKey=e0ba208f951546f68892a6f21793f278&page=${this.state.page - 1}&pageSize=${this.props.pageSize}`;
     this.setState({loading : true})
     let data = await fetch(url);
     let parsedData = await data.json();
@@ -56,7 +56,7 @@ export class News extends Component {
 
     if(!(this.state.page + 1 > Math.ceil(this.state.totalResults/this.props.pageSize))){
   
-      let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=e0ba208f951546f68892a6f21793f278&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;
+      let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&apiKey=e0ba208f951546f68892a6f21793f278&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;
       this.setState({loading : true})
       let data = await fetch(url);
       let parsedData = await data.json();
