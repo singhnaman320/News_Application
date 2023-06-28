@@ -10,13 +10,15 @@ export class News extends Component {
   static defaultProps = {
 
     country : "in",
-    pageSize : 8
+    pageSize : 8,
+    category : 'general'
   }
 
   static propTypes = {
 
     country : PropTypes.string, // use "pts"
     pageSize : PropTypes.number, // use "ptn"
+    category : PropTypes.string
   }
 
   constructor(){
