@@ -43,6 +43,7 @@ export default class App extends Component {
             </Route>
             <Route exact path='/technology'>
               <News key='technology' pageSize={8} country="in" category="technology"/>
+              
             </Route>
             
           </Switch>
