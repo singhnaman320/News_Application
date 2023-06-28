@@ -17,8 +17,10 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Navbar/>
-        <News pageSize={8} country="in" category="general"/> {/* All categories you can see from News API */}
+        <Router>
+          <Navbar/>
+          <News pageSize={8} country="in" category="general"/> {/* All categories you can see from News API */}
+        </Router>
       </div>
     )
   }
