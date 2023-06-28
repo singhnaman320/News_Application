@@ -24,22 +24,25 @@ export default class App extends Component {
             <Route path='/'> {/* will reach to home */}
               <News pageSize={8} country="in" category="general"/> {/* All categories you can see from News API */}
             </Route>
-            <Route path='/'>
+            <Route path='/business'>
               <News pageSize={8} country="in" category="general"/>
             </Route>
-            <Route path='/'>
+            <Route path='/entertainment'>
               <News pageSize={8} country="in" category="general"/>
             </Route>
-            <Route path='/'>
+            <Route path='/general'>
               <News pageSize={8} country="in" category="general"/>
             </Route>
-            <Route path='/'>
+            <Route path='/health'>
               <News pageSize={8} country="in" category="general"/>
             </Route>
-            <Route path='/'>
+            <Route path='/science'>
               <News pageSize={8} country="in" category="general"/>
             </Route>
-            <Route path='/'>
+            <Route path='/sports'>
+              <News pageSize={8} country="in" category="general"/>
+            </Route>
+            <Route path='/technology'>
               <News pageSize={8} country="in" category="general"/>
             </Route>
             
