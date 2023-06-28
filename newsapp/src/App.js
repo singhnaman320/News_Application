@@ -20,7 +20,7 @@ export default class App extends Component {
         <Router>
           <Navbar/>
           <Switch>
-            <Route path='/users'>
+            <Route path='/'> {/* will reach to home */}
               <News pageSize={8} country="in" category="general"/> {/* All categories you can see from News API */}
             </Route>
           </Switch>
