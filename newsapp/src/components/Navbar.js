@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 // Use "rcep --> enter" to get proper structure with proptypes
 export class Navbar extends Component {  // Do not change this class to className
@@ -12,7 +13,7 @@ export class Navbar extends Component {  // Do not change this class to classNam
       <div>
         <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
             <div className="container-fluid">
-                <a className="navbar-brand" to="/">TimesNews</a>
+                <Link className="navbar-brand" to="/">TimesNews</Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
                 </button>
