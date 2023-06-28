@@ -106,8 +106,7 @@ export class News extends Component {
              
                   {/* here slice is used to limit the characters so that our cards become uniform */}
                   <NewsItem title={element.title ? element.title : ""} description={element.description ? element.description : ""} 
-                  imageUrl={element.urlToImage}
-                  newsUrl={element.url}/> {/*way to pass value of title and description*/}
+                  imageUrl={element.urlToImage} newsUrl={element.url} author={element.author ? element.author: 'Vikram Chandra'} date={element.publishedAt}/> {/*way to pass value of title and description*/}
 
               </div>
 
