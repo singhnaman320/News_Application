@@ -8,9 +8,8 @@ import Navbar from './components/Navbar';
 import News from './components/News';
 import{
   BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
+  Switch, // To get Switch install react route dom version below 6.0.0 --> "npm install react-router-dom@5.2.0"
+  Route
 }from 'react-router-dom'
 
 export default class App extends Component {
