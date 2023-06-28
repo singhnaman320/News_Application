@@ -21,7 +21,6 @@ export class Navbar extends Component {  // Do not change this class to classNam
                         <li className="nav-item">
                         <a className="nav-link" aria-current="page" href="/">Home</a>
                         </li>
-                        <li className="nav-item"><a className="nav-link" href="/about">About</a></li>
                         <li className="nav-item"><a className="nav-link" href="/business">Business</a></li>
                         <li className="nav-item"><a className="nav-link" href="/entertainment">Entertainment</a></li>
                         <li className="nav-item"><a className="nav-link" href="/general">General</a></li>
