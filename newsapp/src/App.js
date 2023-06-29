@@ -36,33 +36,33 @@ export default class App extends Component {
           {/* React loading bar from: [https://www.npmjs.com/package/react-top-loading-bar] nut before that istall it like Infinite scroll */}
           <LoadingBar
             color='#f11946'
-            progress={50}
+            progress={this.state.progress}
           />
           <Switch>
             {/* Key here is used for mounting the given category of news overriding the present one */}
             <Route exact path="/"> {/* will reach to home */}
-              <News key='general' pageSize={this.pageSize} country="in" category="general"/> {/* All categories you can see from News API */}
+              <News changeProgress={setProgress} key='general' pageSize={this.pageSize} country="in" category="general"/> {/* All categories you can see from News API */}
             </Route>
             <Route exact path="/business">
-              <News key="business" pageSize={this.pageSize} country="in" category="business"/>
+              <News changeProgress={setProgress} key="business" pageSize={this.pageSize} country="in" category="business"/>
             </Route>
             <Route exact path="/entertainment">
-              <News key="entertainment" pageSize={this.pageSize} country="in" category="entertainment"/>
+              <News changeProgress={setProgress} key="entertainment" pageSize={this.pageSize} country="in" category="entertainment"/>
             </Route>
             <Route exact path="/general">
-              <News key="general" pageSize={this.pageSize} country="in" category="general"/>
+              <News changeProgress={setProgress} key="general" pageSize={this.pageSize} country="in" category="general"/>
             </Route>
             <Route exact path="/health">
-              <News key="health" pageSize={this.pageSize} country="in" category="health"/>
+              <News changeProgress={setProgress} key="health" pageSize={this.pageSize} country="in" category="health"/>
             </Route>
             <Route exact path="/science">
-              <News key="science" pageSize={this.pageSize} country="in" category="science"/>
+              <News changeProgress={setProgress} key="science" pageSize={this.pageSize} country="in" category="science"/>
             </Route>
             <Route exact path="/sports">
-              <News key="sports" pageSize={this.pageSize} country="in" category="sports"/>
+              <News changeProgress={setProgress} key="sports" pageSize={this.pageSize} country="in" category="sports"/>
             </Route>
             <Route exact path="/technology">
-              <News key="technology" pageSize={this.pageSize} country="in" category="technology"/>
+              <News changeProgress={setProgress} key="technology" pageSize={this.pageSize} country="in" category="technology"/>
             </Route>
             
           </Switch>
