@@ -119,6 +119,17 @@ export class News extends Component {
     // this.updateNews();
   // }
 
+  // For Infinite Scroll
+  fetchMoreData = () => {
+    // a fake async api call like which sends
+    // 20 more records in 1.5 secs
+    setTimeout(() => {
+      this.setState({
+        items: this.state.items.concat(Array.from({ length: 20 }))
+      });
+    }, 1500);
+  };
+
   render() {
     return (
       <div className='container my-3'>
