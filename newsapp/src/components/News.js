@@ -44,12 +44,14 @@ export class News extends Component {
 
   async updateNews(){
 
-    this.props.changeProgress(0); // Initially progress of loading bar is 0
+    this.props.changeProgress(10); // Initially progress of loading bar is 10 (we made is 10 for better viewing experience)
 
     const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=e0ba208f951546f68892a6f21793f278&page=${this.state.page}&pageSize=${this.props.pageSize}`;
     this.setState({loading : true})
     let data = await fetch(url);
+    this.props.changeProgress(30); // Progress of loading bar after data is loaded is 30
     let parsedData = await data.json();
+    this.props.changeProgress(50); // Progress of loading bar after data is parsed is 50
     console.log(parsedData);
     this.setState({
       articles : parsedData.articles,
