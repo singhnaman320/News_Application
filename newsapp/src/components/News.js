@@ -127,7 +127,7 @@ export class News extends Component {
           dataLength={this.state.articles.length}
           next={this.fetchMoreData}
           hasMore={this.state.articles.length !== this.state.totalResults}
-          loader={<h4>Loading...</h4>}
+          loader={<Spinner/>}
         >
           {/* Provide all three in same row */}
           {/*{this.state.articles.map((element) => {console.log(element)})}  Will show all the elements related to above states in console*/}
