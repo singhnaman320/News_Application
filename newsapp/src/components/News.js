@@ -119,16 +119,16 @@ export class News extends Component {
     return (
       <div className='container my-3'>
         <h1 className='text-center'>TimesNews - Top {this.capitlizeText(this.props.category)} Headlines</h1>
-        {/* If loading is true then only show the spinner */}
-        {this.state.loading && <Spinner/>} 
+        {/* If loading is true then only show the spinner - we will comment it if we are using infinite scrolling */}
+        {/* {this.state.loading && <Spinner/>}  */} 
 
         {/* Provide all three in same row */}
         {/*{this.state.articles.map((element) => {console.log(element)})}  Will show all the elements related to above states in console*/}
         <div className="row">
            {/* Provide one news card in sinle column */}
            {/* md-3 means -> In medium devices it will take 3 columns of container (total -12 grids)*/}
-
-           {!this.state.loading && this.state.articles.map((element) => {
+           {/* In plece of !this.state.loading && in next line will will use logic of infinite scrolling*/}
+           {this.state.articles.map((element) => {
 
               {/* We have to provide the unique key(here url) as well for each child card otherwise it will see error in console */}
               return <div className="col-md-4" key={element.url}> 
