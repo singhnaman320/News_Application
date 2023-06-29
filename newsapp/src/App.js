@@ -17,6 +17,17 @@ export default class App extends Component {
   
   pageSize=8;
 
+  // For Top loding bar
+  state = {
+    progress: 0
+  }
+
+  // For Top loding bar
+  setState(progress){
+
+    this.setState({progress : progress})
+  }
+
   render() {
     return (
       <div>
@@ -25,8 +36,7 @@ export default class App extends Component {
           {/* React loading bar from: [https://www.npmjs.com/package/react-top-loading-bar] nut before that istall it like Infinite scroll */}
           <LoadingBar
             color='#f11946'
-            progress={progress}
-            onLoaderFinished={() => setProgress(0)}
+            progress={50}
           />
           <Switch>
             {/* Key here is used for mounting the given category of news overriding the present one */}
