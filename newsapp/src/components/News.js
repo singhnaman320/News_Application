@@ -44,6 +44,8 @@ export class News extends Component {
 
   async updateNews(){
 
+    this.props.changeProgress(0); // Initially progress of loading bar is 0
+
     const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=e0ba208f951546f68892a6f21793f278&page=${this.state.page}&pageSize=${this.props.pageSize}`;
     this.setState({loading : true})
     let data = await fetch(url);
@@ -54,6 +56,8 @@ export class News extends Component {
       totalResults: parsedData.totalResults,
       loading : false
     }); // totalResults: Name according to given API
+
+    this.props.changeProgress(100); // Finally progress of loading bar is 100
 
   }
 
