@@ -35,7 +35,7 @@ export class News extends Component {
 
     this.state= { //defining the state
       articles: [],
-      loading: true,
+      loading: false,
       page: 1,  // default: All data on page - 1
       totalResults: 0
     };
@@ -124,14 +124,12 @@ export class News extends Component {
 
     this.setState({page: this.state.page + 1})
     const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=e0ba208f951546f68892a6f21793f278&page=${this.state.page}&pageSize=${this.props.pageSize}`;
-    this.setState({loading : true})
     let data = await fetch(url);
     let parsedData = await data.json();
     console.log(parsedData);
     this.setState({
       articles : this.state.articles.concat(parsedData.articles),
       totalResults: parsedData.totalResults,
-      loading : false
     });
   };
 
@@ -139,8 +137,8 @@ export class News extends Component {
     return (
       <> {/* Returning a ghost element otherwise returning a <div/> will show you a horizontol scroll bar at bottom */}
         <h1 className='text-center'>TimesNews - Top {this.capitlizeText(this.props.category)} Headlines</h1>
-        {/* If loading is true then only show the spinner - we will comment it if we are using infinite scrolling */}
-        {/* {this.state.loading && <Spinner/>}  */} 
+        {/* If loading is true then only show the spinner -*/}
+        {this.state.loading && <Spinner/>}  
 
         <InfiniteScroll
           dataLength={this.state.articles.length}
