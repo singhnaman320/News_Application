@@ -17,7 +17,7 @@ export default class App extends Component {
   
   pageSize=8;
 
-  apiKey = process.env.REACT_APP_NEWS_API;
+  apiKey = process.env.REACT_APP_NEWS_API; // Reading API Key from .env.local file
 
   // For Top loding bar
   state = {
