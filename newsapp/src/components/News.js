@@ -74,9 +74,11 @@ export class News extends Component {
     this.updateNews();
   }
 
-  handlePreviousClick = async() => {
+  // No need for previousClick and nextClick button if you are using Infinite scrolling
 
-    console.log("Previous");
+  // handlePreviousClick = async() => {
+
+    // console.log("Previous");
 
     // let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=e0ba208f951546f68892a6f21793f278&page=${this.state.page - 1}&pageSize=${this.props.pageSize}`;
     // this.setState({loading : true})
@@ -90,13 +92,13 @@ export class News extends Component {
     //   loading : false
     // }); OR
     
-    this.setState({page: this.state.page - 1});
-    this.updateNews();
-  }
+    // this.setState({page: this.state.page - 1});
+    // this.updateNews();
+  // }
 
-  handleNextClick = async() => {
+  // handleNextClick = async() => {
 
-    console.log("Next");
+    // console.log("Next");
 
     // if(!(this.state.page + 1 > Math.ceil(this.state.totalResults/this.props.pageSize))){
   
@@ -113,9 +115,9 @@ export class News extends Component {
 
     // }  OR
 
-    this.setState({page: this.state.page + 1});
-    this.updateNews();
-  }
+    // this.setState({page: this.state.page + 1});
+    // this.updateNews();
+  // }
 
   render() {
     return (
