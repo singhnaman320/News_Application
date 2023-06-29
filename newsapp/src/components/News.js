@@ -118,7 +118,7 @@ export class News extends Component {
   render() {
     return (
       <div className='container my-3'>
-        <h1 className='text-center'>TimesNews - Top Headlines</h1>
+        <h1 className='text-center'>TimesNews - Top Headlines on {this.capitlizeText(this.props.category)}</h1>
         {/* If loading is true then only show the spinner */}
         {this.state.loading && <Spinner/>} 
 
