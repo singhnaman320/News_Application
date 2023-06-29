@@ -21,9 +21,9 @@ export class News extends Component {
     category : PropTypes.string
   }
 
-  constructor(){
+  constructor(props){
 
-    super();
+    super(props);
     console.log("Hello I an constructor from News Component")
 
     this.state= { //defining the state
@@ -31,7 +31,7 @@ export class News extends Component {
       loading: false,
       page: 1  // default: All data on page - 1
     };
-    document.title = this.props.category;
+    document.title = `${this.props.category} - TimesNews`;
   }
 
   async updateNews(){
