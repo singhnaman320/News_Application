@@ -17,6 +17,8 @@ export default class App extends Component {
   
   pageSize=8;
 
+  apiKey = process.env.REACT_APP_NEWS_API;
+
   // For Top loding bar
   state = {
     progress: 0
@@ -42,28 +44,28 @@ export default class App extends Component {
           <Switch>
             {/* Key here is used for mounting the given category of news overriding the present one */}
             <Route exact path="/"> {/* will reach to home */}
-              <News changeProgress={this.setProgress} key='general' pageSize={this.pageSize} country="in" category="general"/> {/* All categories you can see from News API */}
+              <News changeProgress={this.setProgress} apiKey={this.apiKey} key='general' pageSize={this.pageSize} country="in" category="general"/> {/* All categories you can see from News API */}
             </Route>
             <Route exact path="/business">
-              <News changeProgress={this.setProgress} key="business" pageSize={this.pageSize} country="in" category="business"/>
+              <News changeProgress={this.setProgress} apiKey={this.apiKey} key="business" pageSize={this.pageSize} country="in" category="business"/>
             </Route>
             <Route exact path="/entertainment">
-              <News changeProgress={this.setProgress} key="entertainment" pageSize={this.pageSize} country="in" category="entertainment"/>
+              <News changeProgress={this.setProgress} apiKey={this.apiKey} key="entertainment" pageSize={this.pageSize} country="in" category="entertainment"/>
             </Route>
             <Route exact path="/general">
-              <News changeProgress={this.setProgress} key="general" pageSize={this.pageSize} country="in" category="general"/>
+              <News changeProgress={this.setProgress} apiKey={this.apiKey} key="general" pageSize={this.pageSize} country="in" category="general"/>
             </Route>
             <Route exact path="/health">
-              <News changeProgress={this.setProgress} key="health" pageSize={this.pageSize} country="in" category="health"/>
+              <News changeProgress={this.setProgress} apiKey={this.apiKey} key="health" pageSize={this.pageSize} country="in" category="health"/>
             </Route>
             <Route exact path="/science">
-              <News changeProgress={this.setProgress} key="science" pageSize={this.pageSize} country="in" category="science"/>
+              <News changeProgress={this.setProgress} apiKey={this.apiKey} key="science" pageSize={this.pageSize} country="in" category="science"/>
             </Route>
             <Route exact path="/sports">
-              <News changeProgress={this.setProgress} key="sports" pageSize={this.pageSize} country="in" category="sports"/>
+              <News changeProgress={this.setProgress} apiKey={this.apiKey} key="sports" pageSize={this.pageSize} country="in" category="sports"/>
             </Route>
             <Route exact path="/technology">
-              <News changeProgress={this.setProgress} key="technology" pageSize={this.pageSize} country="in" category="technology"/>
+              <News changeProgress={this.setProgress} apiKey={this.apiKey} key="technology" pageSize={this.pageSize} country="in" category="technology"/>
             </Route>
             
           </Switch>
