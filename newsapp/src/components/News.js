@@ -35,7 +35,8 @@ export class News extends Component {
     this.state= { //defining the state
       articles: [],
       loading: false,
-      page: 1  // default: All data on page - 1
+      page: 1,  // default: All data on page - 1
+      totalResults: 0
     };
     document.title = `${this.capitlizeText(this.props.category)} - TimesNews`; // Change the name on the tab when you change category 
   }
