@@ -119,20 +119,25 @@ export class News extends Component {
     // this.updateNews();
   // }
 
-  // For Infinite Scroll
-  fetchMoreData = () => {
-    // a fake async api call like which sends
-    // 20 more records in 1.5 secs
-    setTimeout(() => {
-      this.setState({
-        items: this.state.items.concat(Array.from({ length: 20 }))
-      });
-    }, 1500);
+  // For Infinite Scroll from: https://codesandbox.io/s/yk7637p62z?file=/src/index.js:309-554
+  fetchMoreData = async() => {
+
+    this.setState({page: this.state.page + 1})
+    const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=e0ba208f951546f68892a6f21793f278&page=${this.state.page}&pageSize=${this.props.pageSize}`;
+    this.setState({loading : true})
+    let data = await fetch(url);
+    let parsedData = await data.json();
+    console.log(parsedData);
+    this.setState({
+      articles : this.state.articles.concat(parsedData.articles),
+      totalResults: parsedData.totalResults,
+      loading : false
+    });
   };
 
   render() {
     return (
-      <div className='container my-3'>
+      <> {/* Returning a ghost element otherwise returning a <div/> will show you a horizontol scroll bar at bottom */}
         <h1 className='text-center'>TimesNews - Top {this.capitlizeText(this.props.category)} Headlines</h1>
         {/* If loading is true then only show the spinner - we will comment it if we are using infinite scrolling */}
         {/* {this.state.loading && <Spinner/>}  */} 
@@ -143,25 +148,27 @@ export class News extends Component {
           hasMore={this.state.articles.length !== this.state.totalResults}
           loader={<Spinner/>}
         >
-          {/* Provide all three in same row */}
-          {/*{this.state.articles.map((element) => {console.log(element)})}  Will show all the elements related to above states in console*/}
-          <div className="row">
-            {/* Provide one news card in sinle column */}
-            {/* md-3 means -> In medium devices it will take 3 columns of container (total -12 grids)*/}
+          <div className="container">
+            {/* Provide all three in same row */}
+            {/*{this.state.articles.map((element) => {console.log(element)})}  Will show all the elements related to above states in console*/}
+            <div className="row">
+              {/* Provide one news card in sinle column */}
+              {/* md-3 means -> In medium devices it will take 3 columns of container (total -12 grids)*/}
 
-            {/* In plece of !this.state.loading && in next line will will use logic of infinite scrolling*/}
-            {this.state.articles.map((element) => {
+              {/* In plece of !this.state.loading && in next line will will use logic of infinite scrolling*/}
+              {this.state.articles.map((element) => {
 
-                {/* We have to provide the unique key(here url) as well for each child card otherwise it will see error in console */}
-                return <div className="col-md-4" key={element.url}> 
-              
-                    {/* here slice is used to limit the characters so that our cards become uniform */}
-                    <NewsItem title={element.title ? element.title : ""} description={element.description ? element.description : ""} 
-                    imageUrl={element.urlToImage} newsUrl={element.url} author={element.author ? element.author: 'Vikram Chandra'} date={element.publishedAt} source={element.source.name}/> {/*way to pass value of title and description*/}
+                  {/* We have to provide the unique key(here url) as well for each child card otherwise it will see error in console */}
+                  return <div className="col-md-4" key={element.url}> 
+                
+                      {/* here slice is used to limit the characters so that our cards become uniform */}
+                      <NewsItem title={element.title ? element.title : ""} description={element.description ? element.description : ""} 
+                      imageUrl={element.urlToImage} newsUrl={element.url} author={element.author ? element.author: 'Vikram Chandra'} date={element.publishedAt} source={element.source.name}/> {/*way to pass value of title and description*/}
 
-                </div>
+                  </div>
 
-            })}
+              })}
+            </div>
           </div>
         </InfiniteScroll>
         
@@ -173,7 +180,7 @@ export class News extends Component {
         <button disabled={this.state.page + 1 > Math.ceil(this.state.totalResults/this.props.pageSize)} rel ="noreferrer" type="button" className="btn btn-dark" onClick={this.handleNextClick}>Next &rarr; </button>
         </div> */}
 
-      </div>
+      </>
     )
   }
 }
