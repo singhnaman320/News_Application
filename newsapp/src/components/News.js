@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import NewsItem from './NewsItem'
 import Spinner from './Spinner';
 import PropTypes from 'prop-types'
+import InfiniteScroll from "react-infinite-scroll-component";
 
 
 // Use "rce --> enter" to get simple class structure
@@ -151,11 +152,14 @@ export class News extends Component {
           </div>
         </InfiniteScroll>
         
-        <div className="container d-flex justify-content-between">
-        {/* &larr; Previous arrow, &rarr; Newxt arrow*/}
+        {/* No need for previous and next button if you are using Infinite scrolling */}
+
+        {/* <div className="container d-flex justify-content-between">
+        { &larr; Previous arrow, &rarr; Newxt arrow}
         <button disabled={this.state.page <=1} type="button" className="btn btn-dark mx-2" onClick={this.handlePreviousClick}>&larr; previous</button>
         <button disabled={this.state.page + 1 > Math.ceil(this.state.totalResults/this.props.pageSize)} rel ="noreferrer" type="button" className="btn btn-dark" onClick={this.handleNextClick}>Next &rarr; </button>
-        </div>
+        </div> */}
+
       </div>
     )
   }
