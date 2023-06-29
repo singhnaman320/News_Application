@@ -122,25 +122,33 @@ export class News extends Component {
         {/* If loading is true then only show the spinner - we will comment it if we are using infinite scrolling */}
         {/* {this.state.loading && <Spinner/>}  */} 
 
-        {/* Provide all three in same row */}
-        {/*{this.state.articles.map((element) => {console.log(element)})}  Will show all the elements related to above states in console*/}
-        <div className="row">
-           {/* Provide one news card in sinle column */}
-           {/* md-3 means -> In medium devices it will take 3 columns of container (total -12 grids)*/}
-           {/* In plece of !this.state.loading && in next line will will use logic of infinite scrolling*/}
-           {this.state.articles.map((element) => {
+        <InfiniteScroll
+          dataLength={this.state.items.length}
+          next={this.fetchMoreData}
+          hasMore={true}
+          loader={<h4>Loading...</h4>}
+        >
+          {/* Provide all three in same row */}
+          {/*{this.state.articles.map((element) => {console.log(element)})}  Will show all the elements related to above states in console*/}
+          <div className="row">
+            {/* Provide one news card in sinle column */}
+            {/* md-3 means -> In medium devices it will take 3 columns of container (total -12 grids)*/}
 
-              {/* We have to provide the unique key(here url) as well for each child card otherwise it will see error in console */}
-              return <div className="col-md-4" key={element.url}> 
-             
-                  {/* here slice is used to limit the characters so that our cards become uniform */}
-                  <NewsItem title={element.title ? element.title : ""} description={element.description ? element.description : ""} 
-                  imageUrl={element.urlToImage} newsUrl={element.url} author={element.author ? element.author: 'Vikram Chandra'} date={element.publishedAt} source={element.source.name}/> {/*way to pass value of title and description*/}
+            {/* In plece of !this.state.loading && in next line will will use logic of infinite scrolling*/}
+            {this.state.articles.map((element) => {
 
-              </div>
+                {/* We have to provide the unique key(here url) as well for each child card otherwise it will see error in console */}
+                return <div className="col-md-4" key={element.url}> 
+              
+                    {/* here slice is used to limit the characters so that our cards become uniform */}
+                    <NewsItem title={element.title ? element.title : ""} description={element.description ? element.description : ""} 
+                    imageUrl={element.urlToImage} newsUrl={element.url} author={element.author ? element.author: 'Vikram Chandra'} date={element.publishedAt} source={element.source.name}/> {/*way to pass value of title and description*/}
 
-           })}
-        </div>
+                </div>
+
+            })}
+          </div>
+        </InfiniteScroll>
         
         <div className="container d-flex justify-content-between">
         {/* &larr; Previous arrow, &rarr; Newxt arrow*/}
