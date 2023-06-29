@@ -35,6 +35,7 @@ export default class App extends Component {
           <Navbar/>
           {/* React loading bar from: [https://www.npmjs.com/package/react-top-loading-bar] nut before that istall it like Infinite scroll */}
           <LoadingBar
+          height={3}
             color='#f11946'
             progress={this.state.progress}
           />
