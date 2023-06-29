@@ -21,6 +21,12 @@ export class News extends Component {
     category : PropTypes.string
   }
 
+  // Capitalize the first letter of category title on browser tab 
+  capitlizeText(string) {
+
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
   constructor(props){
 
     super(props);
