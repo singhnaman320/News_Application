@@ -37,7 +37,7 @@ export class News extends Component {
       loading: false,
       page: 1  // default: All data on page - 1
     };
-    document.title = `${this.props.category} - TimesNews`; // Change the name on the tab when you change category 
+    document.title = `${this.capitlizeText(this.props.category)} - TimesNews`; // Change the name on the tab when you change category 
   }
 
   async updateNews(){
