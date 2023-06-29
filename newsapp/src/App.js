@@ -11,6 +11,7 @@ import{
   Switch, // To get Switch install react route dom version below 6.0.0 --> "npm install react-router-dom@5.2.0"
   Route
 }from 'react-router-dom'
+import LoadingBar from 'react-top-loading-bar'
 
 export default class App extends Component {
   
@@ -21,6 +22,12 @@ export default class App extends Component {
       <div>
         <Router>
           <Navbar/>
+          {/* React loading bar from: [https://www.npmjs.com/package/react-top-loading-bar] nut before that istall it like Infinite scroll */}
+          <LoadingBar
+            color='#f11946'
+            progress={progress}
+            onLoaderFinished={() => setProgress(0)}
+          />
           <Switch>
             {/* Key here is used for mounting the given category of news overriding the present one */}
             <Route exact path="/"> {/* will reach to home */}
